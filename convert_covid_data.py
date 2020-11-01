@@ -54,4 +54,4 @@ df = data.melt(
 ).reset_index(
 )
 
-df.to_json('COVID19_Fallzahlen_CH_total.json')
+df.to_json('COVID19_Fallzahlen_CH_total.json', orient='records')
