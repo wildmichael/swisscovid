@@ -32,4 +32,11 @@ jobs:
     - name: Convert the data
       run: |
         python37 convert_covid_data.py
-        file COVID19_Fallzahlen_CH_total.json
+    - name: Commit the converted data
+      uses: github-actions-x/commit@v2.6
+      with:
+        github-token: ${{ secrets.ACCESS_TOKEN }}
+        commit-message: "Updated COVID19_Fallzahlen_CH_total.json"
+        files: COVID19_Fallzahlen_CH_total.json
+        email: themiwi@gmail.com
+        name: Michael Wild
